@@ -11,3 +11,10 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+
+    counter = {}
+    for num in nums:
+        counter[num] = counter.get(num, 0) + 1
+    return max(counter, key=counter.get) 
+    """got return line from StackOverflow, uses get() to grab value from each key,
+    then max() finds the highest and returns the key of the highest"""

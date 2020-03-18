@@ -23,5 +23,31 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
 
     If a valid operation isn't provided, return None.
 
-        >>> calculate('foo', 2, 3) is None
+        >>> calculate('foo', 2, 3)
+        None
     """
+
+    if operation == "add":
+        if not make_int:
+            return f"{message} {a + b}"
+        else:
+            return f"{message} {int(a + b)}"
+    elif operation == "subtract":
+        if not make_int:
+            return f"{message} {a - b}"
+        else:
+            return f"{message} {int(a - b)}"
+    elif operation == "multiply":
+        if not make_int:
+            return f"{message} {a * b}"
+        else:
+            return f"{message} {int(a * b)}"
+    elif operation == "divide":
+        if not make_int:
+            return f"{message} {a / b}"
+        else:
+            return f"{message} {int(a / b)}"
+    return None
+
+    # NOTE: something is wrong with last doctest, even the provided solution
+    # fails the test. If I'm doing something wrong I'm happy to talk about it!
